@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ed" />
+    <title>사과게임 — 숫자를 모아 10의 배수!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="header">
+        <a class="wordmark" href="./" aria-label="사과게임 홈">
+          <span class="wordmark-icon" aria-hidden="true">🍎</span>
+          <span>사과게임</span>
+        </a>
+        <span class="round-label"><span class="live-dot"></span> 1분 챌린지</span>
+      </header>
+
+      <section class="intro" aria-labelledby="game-title">
+        <p class="eyebrow">드래그해서 숫자를 모아보세요</p>
+        <h1 id="game-title">합이 <span>10의 배수</span>가 되면 성공!</h1>
+        <p class="subtitle">상하좌우와 대각선으로 이어진 숫자를 선택할 수 있어요.</p>
+      </section>
+
+      <section class="game-card" aria-label="사과게임">
+        <div class="scoreboard">
+          <div class="score-item">
+            <span class="score-label">내 점수</span>
+            <strong class="score-value" id="score">0</strong>
+          </div>
+          <div class="timer-wrap">
+            <span class="score-label">남은 시간</span>
+            <strong class="timer" id="timer" role="timer" aria-live="off">01:00</strong>
+          </div>
+          <div class="score-item score-item-right">
+            <span class="score-label">최고 점수</span>
+            <strong class="score-value" id="best-score">0</strong>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="time-progress"></div>
+        </div>
+
+        <div class="selection-readout" aria-live="polite">
+          <span class="selection-label">선택 합계</span>
+          <strong class="selection-total" id="selection-total">0</strong>
+          <span class="selection-target" id="selection-target">다음 목표 10</span>
+        </div>
+
+        <div class="board-frame">
+          <div
+            class="board"
+            id="board"
+            role="group"
+            aria-label="8행 8열 숫자 보드"
+            aria-describedby="game-message"
+          ></div>
+          <div class="board-overlay" id="board-overlay">
+            <span class="overlay-icon" aria-hidden="true">🍎</span>
+            <p>숫자를 이어서<br />10의 배수를 만들어보세요</p>
+            <button class="start-button" id="start-button" type="button">게임 시작</button>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <p class="game-message" id="game-message" aria-live="polite">준비되면 게임을 시작하세요!</p>
+        </div>
+      </section>
+
+      <p class="hint"><span aria-hidden="true">✦</span> 숫자를 길게 이어 합이 10, 20, 30…이 되면 놓아주세요.</p>
+    </main>
+  </body>
+</html>
